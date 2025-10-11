@@ -26,4 +26,14 @@ export const categories: Category[] = [
     title: 'Outdoor & Adventure',
     blurb: 'Gear up for your next outdoor adventure.',
   },
+  {
+    slug: 'automotive',
+    title: 'Automotive',
+    blurb: 'Essential accessories to keep your car clean, fresh, and organized.',
+  },
+  {
+    slug: 'toys',
+    title: 'Toys & Games',
+    blurb: 'Educational and entertaining toys for kids of all ages.',
+  },
 ];

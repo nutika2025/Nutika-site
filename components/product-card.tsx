@@ -14,14 +14,16 @@ export function ProductCard({ product }: ProductCardProps) {
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-shadow">
       <CardHeader className="p-0">
-        <div className="relative h-48 bg-muted">
-          <Image
-            src={product.image}
-            alt={product.title}
-            fill
-            className="object-cover"
-          />
-        </div>
+        <Link href={product.url} target="_blank" rel="noopener noreferrer">
+          <div className="relative h-48 bg-muted cursor-pointer hover:opacity-90 transition-opacity">
+            <Image
+              src={product.image}
+              alt={product.title}
+              fill
+              className="object-contain p-4"
+            />
+          </div>
+        </Link>
       </CardHeader>
       <CardContent className="p-4">
         <div className="flex gap-2 mb-2">
