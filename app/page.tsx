@@ -105,9 +105,18 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
             Trending Picks
           </h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
             Our most popular recommendations right now
           </p>
+
+          {/* Disclosure Banner */}
+          <div className="mb-8 p-4 bg-background/80 border border-border rounded-lg max-w-3xl mx-auto">
+            <p className="text-sm text-center text-muted-foreground">
+              <strong>Disclosure:</strong> As an Amazon Associate I earn from qualifying purchases.
+              Product links below include affiliate tags.
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {featuredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />

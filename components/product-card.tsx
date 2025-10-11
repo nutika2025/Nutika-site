@@ -40,13 +40,16 @@ export function ProductCard({ product }: ProductCardProps) {
           {product.blurb}
         </p>
       </CardContent>
-      <CardFooter className="p-4 pt-0">
+      <CardFooter className="p-4 pt-0 flex flex-col gap-2">
         <Link href={product.url} target="_blank" rel="noopener noreferrer" className="w-full">
           <Button className="w-full" variant="default">
             View on Amazon
             <ExternalLink className="ml-2 h-4 w-4" />
           </Button>
         </Link>
+        <p className="text-xs text-center text-muted-foreground italic">
+          #CommissionsEarned
+        </p>
       </CardFooter>
     </Card>
   );

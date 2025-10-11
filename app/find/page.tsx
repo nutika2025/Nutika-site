@@ -196,6 +196,16 @@ export default function FindPage() {
         {/* Results */}
         {hasSearched && (
           <div>
+            {/* Disclosure Banner */}
+            {filteredProducts.length > 0 && (
+              <div className="mb-6 p-4 bg-muted/60 border border-border rounded-lg">
+                <p className="text-sm text-center text-muted-foreground">
+                  <strong>Disclosure:</strong> As an Amazon Associate I earn from qualifying purchases.
+                  Product links below include affiliate tags.
+                </p>
+              </div>
+            )}
+
             <div className="mb-6">
               <h2 className="text-2xl font-bold mb-2">
                 {filteredProducts.length > 0

@@ -70,6 +70,16 @@ export default async function CategoryPage({
           </p>
         </div>
 
+        {/* Disclosure Banner */}
+        {categoryProducts.length > 0 && (
+          <div className="mb-8 p-4 bg-muted/60 border border-border rounded-lg">
+            <p className="text-sm text-center text-muted-foreground">
+              <strong>Disclosure:</strong> As an Amazon Associate I earn from qualifying purchases.
+              Product links below include affiliate tags.
+            </p>
+          </div>
+        )}
+
         {/* Products Grid */}
         {categoryProducts.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
