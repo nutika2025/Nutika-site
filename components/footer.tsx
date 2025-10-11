@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { Sparkles } from "lucide-react";
+import { Sparkles, Mail, MapPin } from "lucide-react";
 
 export function Footer() {
   return (
     <footer className="border-t bg-muted/40">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="flex items-center gap-2 font-bold text-xl mb-3">
@@ -60,6 +60,23 @@ export function Footer() {
                 <Link href="/legal/disclosure" className="text-muted-foreground hover:text-foreground transition-colors">
                   Affiliate Disclosure
                 </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h3 className="font-semibold mb-3">Contact</h3>
+            <ul className="space-y-2 text-sm">
+              <li className="flex items-center gap-2 text-muted-foreground">
+                <Mail className="h-4 w-4" />
+                <a href="mailto:support@nutika.ca" className="hover:text-foreground transition-colors">
+                  support@nutika.ca
+                </a>
+              </li>
+              <li className="flex items-center gap-2 text-muted-foreground">
+                <MapPin className="h-4 w-4" />
+                <span>Edmonton, Canada</span>
               </li>
             </ul>
           </div>
