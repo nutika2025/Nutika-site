@@ -4,27 +4,26 @@ import { Button } from "@/components/ui/button";
 
 export function Navbar() {
   return (
-    <nav className="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 font-bold text-xl">
-          <Sparkles className="h-6 w-6 text-primary" />
-          Nutika
+    <nav className="fixed top-0 left-0 right-0 z-50 floating-nav border-b border-border/50">
+      <div className="container mx-auto px-6 h-16 flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-2 font-normal text-xl hover:text-primary transition-colors">
+          <Sparkles className="h-5 w-5 text-primary" />
+          <span className="tracking-tight">Nutika</span>
         </Link>
 
-        <div className="hidden md:flex items-center gap-6">
-          <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">
-            Home
-          </Link>
-          <Link href="/find" className="text-sm font-medium hover:text-primary transition-colors">
+        <div className="hidden md:flex items-center gap-8">
+          <Link href="/find" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
             Find Picks
           </Link>
-          <Link href="/category/smart-home" className="text-sm font-medium hover:text-primary transition-colors">
-            Categories
+          <Link href="/category/smart-home" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+            Browse
           </Link>
         </div>
 
         <Link href="/find">
-          <Button>Find My Pick</Button>
+          <Button size="sm" className="h-9">
+            Find My Pick
+          </Button>
         </Link>
       </div>
     </nav>

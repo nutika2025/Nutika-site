@@ -13,85 +13,92 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
-      {/* Hero Section */}
-      <section className="gradient-bg py-20 md:py-32">
-        <div className="container mx-auto px-4 text-center">
-          <div className="flex justify-center mb-6">
-            <Sparkles className="h-16 w-16 text-primary" />
-          </div>
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 max-w-4xl mx-auto">
-            AI-Curated Amazon Picks, Instantly.
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Tell us your budget and who it&apos;s for. We&apos;ll surface great finds—no scrolling marathon.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/find">
-              <Button size="lg" className="text-lg px-8">
-                Find My Pick
-                <Sparkles className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-            <Link href="/category/smart-home">
-              <Button size="lg" variant="outline" className="text-lg px-8">
-                Browse Categories
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="py-16 md:py-24 bg-muted/40">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            How It Works
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="flex justify-center mb-4">
-                <div className="bg-primary/10 p-4 rounded-full">
-                  <Target className="h-8 w-8 text-primary" />
-                </div>
+      {/* Hero Section - Bento Grid Layout */}
+      <section className="breathing-room bg-background">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center">
+            {/* Left Column - Main Title */}
+            <div className="md:col-span-7 space-y-6">
+              <div className="flex items-center gap-3 mb-4">
+                <Sparkles className="h-8 w-8 text-primary" />
+                <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+                  AI-Powered Curation
+                </span>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Tell Us What You Need</h3>
-              <p className="text-muted-foreground">
-                Share your budget, who it&apos;s for, and their interests.
+              <h1 className="text-display text-foreground max-w-3xl">
+                Amazon Picks
+                <span className="block text-primary">Curated Instantly.</span>
+              </h1>
+              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
+                Share your budget and recipient. We&apos;ll surface perfect finds—no endless scrolling.
               </p>
+              <div className="pt-4">
+                <Link href="/find">
+                  <Button size="lg" className="text-lg px-8 h-14">
+                    Find My Pick
+                    <Sparkles className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+              </div>
             </div>
-            <div className="text-center">
-              <div className="flex justify-center mb-4">
-                <div className="bg-primary/10 p-4 rounded-full">
-                  <Zap className="h-8 w-8 text-primary" />
+            
+            {/* Right Column - Value Proposition Cards */}
+            <div className="md:col-span-5 space-y-4">
+              <div className="bg-card rounded-2xl p-6 border shadow-subtle">
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="bg-primary/10 p-2 rounded-lg">
+                    <Target className="h-5 w-5 text-primary" />
+                  </div>
+                  <h3 className="font-semibold">Smart Matching</h3>
                 </div>
+                <p className="text-sm text-muted-foreground">
+                  AI analyzes thousands of products to find your perfect match
+                </p>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Get Instant Matches</h3>
-              <p className="text-muted-foreground">
-                Our algorithm surfaces products that fit your criteria perfectly.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="flex justify-center mb-4">
-                <div className="bg-primary/10 p-4 rounded-full">
-                  <ShieldCheck className="h-8 w-8 text-primary" />
+              
+              <div className="bg-card rounded-2xl p-6 border shadow-subtle">
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="bg-primary/10 p-2 rounded-lg">
+                    <Zap className="h-5 w-5 text-primary" />
+                  </div>
+                  <h3 className="font-semibold">Instant Results</h3>
                 </div>
+                <p className="text-sm text-muted-foreground">
+                  Get personalized recommendations in seconds, not hours
+                </p>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Shop with Confidence</h3>
-              <p className="text-muted-foreground">
-                All picks are curated based on ratings, reviews, and real value.
-              </p>
+              
+              <div className="bg-card rounded-2xl p-6 border shadow-subtle">
+                <div className="flex items-center gap-4 mb-3">
+                  <div className="bg-primary/10 p-2 rounded-lg">
+                    <ShieldCheck className="h-5 w-5 text-primary" />
+                  </div>
+                  <h3 className="font-semibold">Quality Guaranteed</h3>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  Only top-rated products with real value and reviews
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Categories */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Popular Categories
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <section className="breathing-room-sm bg-card/40">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-16">
+            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+              Shop by Interest
+            </span>
+            <h2 className="text-heading mt-4 mb-4">
+              Popular Categories
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Explore our curated collections across different interests and price ranges
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {categories.map((category) => (
               <CategoryCard key={category.slug} category={category} />
             ))}
@@ -100,31 +107,35 @@ export default function Home() {
       </section>
 
       {/* Trending Products */}
-      <section className="py-16 md:py-24 bg-muted/40">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-            Trending Picks
-          </h2>
-          <p className="text-center text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Our most popular recommendations right now
-          </p>
-
-          {/* Disclosure Banner */}
-          <div className="mb-8 p-4 bg-background/80 border border-border rounded-lg max-w-3xl mx-auto">
-            <p className="text-sm text-center text-muted-foreground">
-              <strong>Disclosure:</strong> As an Amazon Associate I earn from qualifying purchases.
-              Product links below include affiliate tags.
+      <section className="breathing-room-sm">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-12">
+            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+              Editor&apos;s Choice
+            </span>
+            <h2 className="text-heading mt-4 mb-4">
+              Trending Picks
+            </h2>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Our most popular recommendations right now
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Disclosure Banner */}
+          <div className="mb-8 p-4 bg-card/50 border border-border/50 rounded-xl max-w-3xl mx-auto">
+            <p className="text-sm text-center text-muted-foreground">
+              As an Amazon Associate, we earn from qualifying purchases.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {featuredProducts.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
           <div className="text-center mt-12">
             <Link href="/find">
-              <Button size="lg">
+              <Button size="lg" variant="outline">
                 Find More Picks
                 <Sparkles className="ml-2 h-5 w-5" />
               </Button>
@@ -133,35 +144,24 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 md:py-24 gradient-bg">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
-            Ready to Find Your Perfect Pick?
-          </h2>
-          <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Answer a few quick questions and get personalized Amazon recommendations in seconds.
-          </p>
-          <Link href="/find">
-            <Button size="lg" className="text-lg px-8">
-              Get Started
-              <Sparkles className="ml-2 h-5 w-5" />
-            </Button>
-          </Link>
-        </div>
-      </section>
-
       {/* FAQ Section */}
-      <section className="py-16 md:py-24">
-        <div className="container mx-auto px-4 max-w-3xl">
-          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Frequently Asked Questions
-          </h2>
-          <Accordion type="single" collapsible className="w-full">
+      <section className="breathing-room-sm bg-card/40">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <div className="text-center mb-12">
+            <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+              Questions
+            </span>
+            <h2 className="text-heading mt-4 mb-4">
+              Frequently Asked
+            </h2>
+          </div>
+          <Accordion type="single" collapsible className="w-full max-w-3xl mx-auto">
             {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger>{faq.question}</AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
+              <AccordionItem key={index} value={`item-${index}`} className="border-b border-border/50">
+                <AccordionTrigger className="text-left hover:no-underline">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground pb-6">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
