@@ -163,4 +163,30 @@
   .animate-aurora {
     animation: aurora 60s linear infinite;
   }
+
+  /* Premium shine animation */
+  @keyframes shine {
+    0% {
+      background-position: 200% center;
+    }
+    100% {
+      background-position: -200% center;
+    }
+  }
+
+  .shine-effect {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--primary)) 0%,
+      hsl(var(--primary)) 40%,
+      rgba(255, 255, 255, 0.9) 50%,
+      hsl(var(--primary)) 60%,
+      hsl(var(--primary)) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 5.67s ease-in-out infinite;
+  }
 }

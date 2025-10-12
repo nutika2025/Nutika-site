@@ -42,7 +42,7 @@ export default function Home() {
                   </div>
                   <h1 className="text-display text-foreground dark:text-white max-w-3xl">
                     Amazon Picks
-                    <span className="block text-primary">Curated Instantly.</span>
+                    <span className="block shine-effect">Curated Instantly.</span>
                   </h1>
                   <p className="text-lg md:text-xl text-muted-foreground dark:text-neutral-200 max-w-2xl leading-relaxed">
                     Share your budget and recipient. We&apos;ll surface perfect finds—no endless scrolling.
