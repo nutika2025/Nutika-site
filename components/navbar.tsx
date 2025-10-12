@@ -1,10 +1,13 @@
+"use client";
+
 import Link from "next/link";
 import { Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 floating-nav border-b border-border/50">
+    <nav className="fixed top-0 left-0 right-0 z-50 floating-nav dark:floating-nav-dark border-b border-border/50">
       <div className="container mx-auto px-6 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 font-normal text-xl hover:text-primary transition-colors">
           <Sparkles className="h-5 w-5 text-primary" />
@@ -20,11 +23,14 @@ export function Navbar() {
           </Link>
         </div>
 
-        <Link href="/find">
-          <Button size="sm" className="h-9">
-            Find My Pick
-          </Button>
-        </Link>
+        <div className="flex items-center gap-2">
+          <ThemeToggle />
+          <Link href="/find">
+            <Button size="sm" className="h-9">
+              Find My Pick
+            </Button>
+          </Link>
+        </div>
       </div>
     </nav>
   );

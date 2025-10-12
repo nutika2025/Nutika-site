@@ -1,9 +1,13 @@
+"use client";
+
 import Link from "next/link";
 import { Sparkles, Zap, Target, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ProductCard } from "@/components/product-card";
 import { CategoryCard } from "@/components/category-card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { AuroraBackground } from "@/components/ui/aurora-background";
+import { motion } from "framer-motion";
 import { products } from "@/data/products";
 import { categories } from "@/data/categories";
 import { faqs } from "@/data/faqs";
@@ -13,76 +17,89 @@ export default function Home() {
 
   return (
     <main className="min-h-screen">
-      {/* Hero Section - Bento Grid Layout */}
-      <section className="breathing-room bg-background">
-        <div className="container mx-auto px-4 max-w-7xl">
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center">
-            {/* Left Column - Main Title */}
-            <div className="md:col-span-7 space-y-6">
-              <div className="flex items-center gap-3 mb-4">
-                <Sparkles className="h-8 w-8 text-primary" />
-                <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
-                  AI-Powered Curation
-                </span>
-              </div>
-              <h1 className="text-display text-foreground max-w-3xl">
-                Amazon Picks
-                <span className="block text-primary">Curated Instantly.</span>
-              </h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
-                Share your budget and recipient. We&apos;ll surface perfect finds—no endless scrolling.
-              </p>
-              <div className="pt-4">
-                <Link href="/find">
-                  <Button size="lg" className="text-lg px-8 h-14">
-                    Find My Pick
-                    <Sparkles className="ml-2 h-5 w-5" />
-                  </Button>
-                </Link>
+      {/* Hero Section - Bento Grid Layout with Aurora Background */}
+      <AuroraBackground>
+        <motion.div
+          initial={{ opacity: 0.0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+          className="relative z-10 w-full"
+        >
+          <section className="breathing-room">
+            <div className="container mx-auto px-4 max-w-7xl">
+              <div className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-center">
+                {/* Left Column - Main Title */}
+                <div className="md:col-span-7 space-y-6">
+                  <div className="flex items-center gap-3 mb-4">
+                    <Sparkles className="h-8 w-8 text-primary" />
+                    <span className="text-sm font-medium text-muted-foreground uppercase tracking-wider">
+                      AI-Powered Curation
+                    </span>
+                  </div>
+                  <h1 className="text-display text-foreground dark:text-white max-w-3xl">
+                    Amazon Picks
+                    <span className="block text-primary">Curated Instantly.</span>
+                  </h1>
+                  <p className="text-lg md:text-xl text-muted-foreground dark:text-neutral-200 max-w-2xl leading-relaxed">
+                    Share your budget and recipient. We&apos;ll surface perfect finds—no endless scrolling.
+                  </p>
+                  <div className="pt-4">
+                    <Link href="/find">
+                      <Button size="lg" className="text-lg px-8 h-14">
+                        Find My Pick
+                        <Sparkles className="ml-2 h-5 w-5" />
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+
+                {/* Right Column - Value Proposition Cards */}
+                <div className="md:col-span-5 space-y-4">
+                  <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 border shadow-subtle">
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className="bg-primary/10 p-2 rounded-lg">
+                        <Target className="h-5 w-5 text-primary" />
+                      </div>
+                      <h3 className="font-semibold">Smart Matching</h3>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      AI analyzes thousands of products to find your perfect match
+                    </p>
+                  </div>
+
+                  <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 border shadow-subtle">
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className="bg-primary/10 p-2 rounded-lg">
+                        <Zap className="h-5 w-5 text-primary" />
+                      </div>
+                      <h3 className="font-semibold">Instant Results</h3>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      Get personalized recommendations in seconds, not hours
+                    </p>
+                  </div>
+
+                  <div className="bg-card/80 backdrop-blur-sm rounded-2xl p-6 border shadow-subtle">
+                    <div className="flex items-center gap-4 mb-3">
+                      <div className="bg-primary/10 p-2 rounded-lg">
+                        <ShieldCheck className="h-5 w-5 text-primary" />
+                      </div>
+                      <h3 className="font-semibold">Quality Guaranteed</h3>
+                    </div>
+                    <p className="text-sm text-muted-foreground">
+                      Only top-rated products with real value and reviews
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-            
-            {/* Right Column - Value Proposition Cards */}
-            <div className="md:col-span-5 space-y-4">
-              <div className="bg-card rounded-2xl p-6 border shadow-subtle">
-                <div className="flex items-center gap-4 mb-3">
-                  <div className="bg-primary/10 p-2 rounded-lg">
-                    <Target className="h-5 w-5 text-primary" />
-                  </div>
-                  <h3 className="font-semibold">Smart Matching</h3>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  AI analyzes thousands of products to find your perfect match
-                </p>
-              </div>
-              
-              <div className="bg-card rounded-2xl p-6 border shadow-subtle">
-                <div className="flex items-center gap-4 mb-3">
-                  <div className="bg-primary/10 p-2 rounded-lg">
-                    <Zap className="h-5 w-5 text-primary" />
-                  </div>
-                  <h3 className="font-semibold">Instant Results</h3>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  Get personalized recommendations in seconds, not hours
-                </p>
-              </div>
-              
-              <div className="bg-card rounded-2xl p-6 border shadow-subtle">
-                <div className="flex items-center gap-4 mb-3">
-                  <div className="bg-primary/10 p-2 rounded-lg">
-                    <ShieldCheck className="h-5 w-5 text-primary" />
-                  </div>
-                  <h3 className="font-semibold">Quality Guaranteed</h3>
-                </div>
-                <p className="text-sm text-muted-foreground">
-                  Only top-rated products with real value and reviews
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+          </section>
+        </motion.div>
+      </AuroraBackground>
 
       {/* Categories */}
       <section className="breathing-room-sm bg-card/40">
